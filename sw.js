@@ -4,7 +4,7 @@
    mudança dela que faz o navegador perceber que há atualização.
    ============================================================ */
 
-const VERSAO = '2026-08-25.04b69636';
+const VERSAO = '2026-08-25.4edc4783';
 const CACHE = 'controle-tecnologico-' + VERSAO;
 
 /* O que precisa estar guardado para o app abrir sem internet. */
