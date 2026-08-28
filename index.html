@@ -13844,6 +13844,13 @@ function registrarAtualizacao() {
  */
 function mostrarAvisoDeVersao(trabalhador) {
   esperandoTroca = trabalhador;
+  // na demonstração ninguém depende de um ensaio real em andamento, e não dá
+  // para contar com o prospecto tocar em "Atualizar agora" sozinho — por isso
+  // aqui a versão nova entra sozinha, sem avisar. No app de produção o
+  // laboratorista continua no controle: `temDemo()` só existe no build de
+  // demonstração (ver app-demo.js), então o app do cliente cai direto na
+  // faixa de aviso de sempre.
+  if (typeof temDemo === 'function' && temDemo()) { aplicarVersaoNova(); return; }
   const faixa = $('faixaVersao');
   if (!faixa) return;
   faixa.classList.add('visivel');
